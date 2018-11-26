@@ -70,13 +70,15 @@ class Assembler(object):
 
   def second_pass(self, instructions):
     """Takes a list of hack instructions and returns a
-    list of binary code representing translated instructions
+    dictionary containing a list  of binary code representing translated instructions
+    and a list of translated instructions 
 
     Args: 
       instructions: A list of hack instructions is (loop)
 
     Return:
-      returns a list of binary containing translated hack assembly code
+      returns a dictionary containting 
+        {'binary': binary_code, 'assembly': assembly_instruction}
     """
     binary = []
     asembly_instruction = []
