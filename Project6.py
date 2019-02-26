@@ -1,3 +1,4 @@
+"""Solution to Project 6: Assembler """
 
 import sys
 import re
