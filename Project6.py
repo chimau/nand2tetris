@@ -4,7 +4,7 @@ import sys
 import re
 
 class Assembler(object):
-  """Provides the ability to compile a Hack assmbley code to binary code."""
+  """Provides the ability to assemble a Hack assmbley code to binary code."""
 
   def __init__(self):
     """Initializes an Assembler with symbole table."""
@@ -202,7 +202,7 @@ class Assembler(object):
                'JMP':'111'} }
     return c_table
 
-  def compile(self, inputfile, outputfile, Verbose=None):
+  def assemble(self, inputfile, outputfile, Verbose=None):
     """Translates a hack assembly file 'inputfile.asm' to a hack binary file 'outputfile.hack'
 
     Args:
@@ -226,7 +226,7 @@ class Assembler(object):
     with open(outputfile + '.hack', 'w+') as f:
       for bin_code in instructions_in_binary:
         f.write(bin_code+'\n')
-    print('Compiler completed')
+    print('Assembler completed')
 
 
 def main():
@@ -234,7 +234,7 @@ def main():
   inputfile = sys.argv[1]
   outputfile = sys.argv[2]
   assembler = Assembler()
-  assembler.compile(inputfile, outputfile, Verbose=sys.argv[3])
+  assembler.assemble(inputfile, outputfile, Verbose=sys.argv[3])
 
 if __name__ == '__main__':
   main()
